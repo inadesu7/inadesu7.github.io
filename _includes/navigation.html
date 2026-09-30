@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg bg-light shadow-lg" aria-label="Main navigation">
+<nav class="navbar navbar-expand-xl bg-light shadow-lg" aria-label="Main navigation">
   <div class="container">
-    <a class="navbar-brand me-auto me-lg-4 d-flex align-items-center gap-2" href="{{ '/' | relative_url }}">
+    <a class="navbar-brand me-auto me-xl-4 d-flex align-items-center gap-2" href="{{ '/' | relative_url }}">
       <img src="{{ '/assets/images/brand/inadesu-logo.png' | relative_url }}" class="logo img-fluid" alt="" style="flex-shrink: 0;">
-      <span class="d-none d-lg-block" style="line-height: 1.2;">Inclusive Action for Development<br>and Sustainability (INADESU)</span>
-      <span class="d-lg-none">INADESU</span>
+      <span class="d-none d-xl-block" style="line-height: 1.2;">Inclusive Action for Development<br>and Sustainability (INADESU)</span>
+      <span class="d-xl-none">INADESU</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
             </ul>
           </li>
           {% elsif item.cta %}
-          <li class="nav-item ms-lg-3"><a class="nav-link custom-btn custom-border-btn btn {% if is_active %}active{% endif %}" href="{{ item.url | relative_url }}">{{ item.label | escape }}</a></li>
+          <li class="nav-item ms-xl-3"><a class="nav-link custom-btn custom-border-btn btn {% if is_active %}active{% endif %}" href="{{ item.url | relative_url }}">{{ item.label | escape }}</a></li>
           {% else %}
           <li class="nav-item {% if is_active %}active{% endif %}"><a class="nav-link {% if is_active %}active{% endif %}" href="{{ item.url | relative_url }}">{{ item.label | escape }}</a></li>
           {% endif %}

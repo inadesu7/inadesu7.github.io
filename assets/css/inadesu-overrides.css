@@ -20,6 +20,12 @@ h6 {
   letter-spacing: 0;
 }
 
+/* Safety net: wrap nav items instead of overflowing past the viewport on narrow desktop widths */
+.navbar-expand-xl .navbar-nav {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
 .hero-section-full-height {
   height: auto;
   min-height: 0;
