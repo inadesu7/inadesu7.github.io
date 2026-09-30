@@ -141,17 +141,47 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+  .carousel-image {
+    aspect-ratio: auto;
+    height: 480px;
+    object-fit: cover;
+  }
+
+  #hero-slide .carousel-caption {
+    padding: 16px;
+  }
+
   #hero-slide .carousel-caption h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   #hero-slide .carousel-caption p {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  #hero-slide .carousel-caption .custom-btn {
+    padding: 10px 18px;
+    font-size: 14px;
   }
 
   .team-card .volunteer-image {
     width: 170px;
     height: 170px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-image {
+    height: 440px;
+  }
+
+  #hero-slide .carousel-caption h1 {
+    font-size: 24px;
+  }
+
+  #hero-slide .carousel-caption .custom-btn {
+    padding: 8px 14px;
+    font-size: 13px;
   }
 }
 
