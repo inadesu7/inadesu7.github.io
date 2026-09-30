@@ -1,5 +1,5 @@
 - name: Health
-  icon: bi-heart-pulse
+  icon: bi-heart-fill
   description: The health department handles health-related issues and organizes health workshops and awareness campaigns.
 - name: Entrepreneurship and Agricultural Development
   icon: bi-flower1

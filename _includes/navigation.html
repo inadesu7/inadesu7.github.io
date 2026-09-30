@@ -14,15 +14,22 @@
           {% assign item_url = item.url | relative_url %}
           {% assign current_url = page.url | relative_url %}
           {% assign is_active = false %}
-          {% if item_url == current_url or current_url == '/' and item.url == '/' %}
-            {% assign is_active = true %}
-          {% elsif item.children %}
+          
+          {% if item.children %}
+            <!-- For dropdowns, only check if we're on a child page -->
             {% for child in item.children %}
-              {% if child.url | relative_url == current_url %}
+              {% assign child_url = child.url | relative_url %}
+              {% if child_url == current_url %}
                 {% assign is_active = true %}
               {% endif %}
             {% endfor %}
+          {% else %}
+            <!-- For regular links, check if we're on that page -->
+            {% if item_url == current_url or current_url == '/' and item.url == '/' %}
+              {% assign is_active = true %}
+            {% endif %}
           {% endif %}
+          
           {% if item.children %}
           <li class="nav-item dropdown {% if is_active %}active{% endif %}">
             <a class="nav-link dropdown-toggle {% if is_active %}active{% endif %}" href="{{ item.url | relative_url }}" id="nav-{{ item.label | slugify }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ item.label | escape }}</a>

@@ -28,21 +28,40 @@ h6 {
 #hero-slide .carousel-item {
   height: auto;
   min-height: 0;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 #hero-slide .carousel-caption {
-  width: min(54%, 680px);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
   min-width: 0;
   min-height: 0;
-  padding: 70px 64px 36px 110px;
-  background: rgba(255, 255, 255, 0.94);
-  clip-path: polygon(100% 100%, 100% 0, 48% 0);
-  top: 0;
-  bottom: 0;
+  padding: 20px;
+  background: transparent;
+  clip-path: none;
+  text-align: center;
+  z-index: 2;
 }
 
 #hero-slide .carousel-caption h1 {
-  color: var(--secondary-color);
+  color: #fff;
+  font-size: 56px;
+  font-weight: 700;
+}
+
+#hero-slide .carousel-caption p {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 0;
 }
 
 .carousel-image {
@@ -62,6 +81,28 @@ h6 {
 .custom-btn:hover,
 .navbar .custom-btn:hover {
   color: #fff;
+}
+
+.custom-border-btn {
+  background: var(--custom-btn-bg-color);
+  color: #fff !important;
+}
+
+.custom-border-btn:hover {
+  background: var(--custom-btn-bg-hover-color);
+  border-color: var(--custom-btn-bg-hover-color);
+  color: #fff !important;
+}
+
+/* Keep the navbar Donate button as an outline so it stands apart from filled buttons */
+.navbar .custom-border-btn {
+  background: transparent;
+  color: var(--custom-btn-bg-color) !important;
+}
+
+.navbar .custom-border-btn:hover {
+  background: var(--custom-btn-bg-hover-color);
+  color: #fff !important;
 }
 
 .navbar .nav-link.active {
@@ -100,22 +141,12 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-  #hero-slide .carousel-caption {
-    position: static;
-    width: 100%;
-    padding: 28px 20px 30px;
-    background: #fff;
-    clip-path: none;
-    text-align: center;
-  }
-
   #hero-slide .carousel-caption h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
 
-  .carousel-image {
-    aspect-ratio: auto;
-    object-fit: contain;
+  #hero-slide .carousel-caption p {
+    font-size: 16px;
   }
 
   .team-card .volunteer-image {
