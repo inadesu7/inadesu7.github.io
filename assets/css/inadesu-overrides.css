@@ -26,9 +26,8 @@ h6 {
 }
 
 #hero-slide .carousel-item {
-  height: auto;
-  min-height: 0;
   position: relative;
+  min-height: 360px;
 }
 
 .hero-overlay {
@@ -39,13 +38,11 @@ h6 {
 }
 
 #hero-slide .carousel-caption {
-  position: absolute;
-  inset: 0;
+  position: relative;
   width: 100%;
   max-width: none;
-  min-width: 0;
-  min-height: 0;
-  padding: 20px;
+  padding: 60px 20px;
+  margin: 0 auto;
   background: transparent;
   clip-path: none;
   text-align: center;
@@ -65,10 +62,10 @@ h6 {
 }
 
 .carousel-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  min-height: 0;
-  aspect-ratio: 1707 / 436;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -141,14 +138,8 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-  .carousel-image {
-    aspect-ratio: auto;
-    height: 480px;
-    object-fit: cover;
-  }
-
   #hero-slide .carousel-caption {
-    padding: 16px;
+    padding: 40px 20px;
   }
 
   #hero-slide .carousel-caption h1 {
@@ -167,21 +158,6 @@ img {
   .team-card .volunteer-image {
     width: 170px;
     height: 170px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .carousel-image {
-    height: 440px;
-  }
-
-  #hero-slide .carousel-caption h1 {
-    font-size: 24px;
-  }
-
-  #hero-slide .carousel-caption .custom-btn {
-    padding: 8px 14px;
-    font-size: 13px;
   }
 }
 
