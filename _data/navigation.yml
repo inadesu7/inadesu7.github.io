@@ -1,0 +1,20 @@
+- label: Home
+  url: /
+- label: About
+  url: /about/
+- label: Projects
+  url: /projects/
+  children:
+    - label: Current Projects
+      url: /projects/current/
+    - label: Past Projects
+      url: /projects/past/
+- label: Team
+  url: /team/
+- label: News
+  url: /news/
+- label: Contact
+  url: /contact/
+- label: Donate
+  url: /donate/
+  cta: true

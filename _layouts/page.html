@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="news-detail-header-section text-center page-header">
+  <div class="section-overlay" aria-hidden="true"></div>
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-white">{{ page.title | escape }}</h1>
+        {% if page.lead %}<p class="text-white mb-0">{{ page.lead | escape }}</p>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-padding">
+  <div class="container page-content">
+    {{ content }}
+  </div>
+</section>

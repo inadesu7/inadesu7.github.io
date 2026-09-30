@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-12 d-flex flex-wrap">
+        <p class="d-flex me-4 mb-0"><i class="bi-geo-alt me-2" aria-hidden="true"></i>{{ site.data.organisation.address | escape }}</p>
+        <p class="d-flex mb-0"><i class="bi-envelope me-2" aria-hidden="true"></i><a href="mailto:{{ site.data.organisation.email }}">{{ site.data.organisation.email }}</a></p>
+      </div>
+      <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+        {% include social-links.html %}
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,6 @@
+<article class="team-card custom-text-box text-center h-100">
+  <img src="{{ include.member.image | relative_url }}" class="volunteer-image img-fluid rounded-circle" alt="Portrait of {{ include.member.name | escape }}" loading="lazy">
+  <h2 class="h5 mt-4 mb-1">{{ include.member.name | escape }}</h2>
+  <p class="mb-1"><strong>{{ include.member.role | escape }}</strong></p>
+  {% if include.member.department %}<p class="small mb-0">{{ include.member.department | escape }}</p>{% endif %}
+</article>

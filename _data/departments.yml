@@ -1,0 +1,15 @@
+- name: Health
+  icon: bi-heart-pulse
+  description: The health department handles health-related issues and organizes health workshops and awareness campaigns.
+- name: Entrepreneurship and Agricultural Development
+  icon: bi-flower1
+  description: Trains women and men in agricultural activities, crop-yield techniques, and practical skills; it also facilitates access to fertilizers and farming equipment.
+- name: Advocacy and Human Rights
+  icon: bi-megaphone
+  description: Works to empower people to defend their rights, promote gender equality, address gender violence, and connect neglected community members with appropriate organizations.
+- name: Project Management
+  icon: bi-kanban
+  description: Oversees projects, monitors progress, prepares interim and final reports, and develops grants and concept notes.
+- name: Education, Research and Development
+  icon: bi-book
+  description: Carries out projects and activities that support pupils' learning, students' academic development, and research skills.

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-light shadow-lg" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand me-auto me-lg-4 d-flex align-items-center gap-2" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/brand/inadesu-logo.png' | relative_url }}" class="logo img-fluid" alt="" style="flex-shrink: 0;">
+      <span class="d-none d-lg-block" style="line-height: 1.2;">Inclusive Action for Development<br>and Sustainability (INADESU)</span>
+      <span class="d-lg-none">INADESU</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {% for item in site.data.navigation %}
+          {% assign item_url = item.url | relative_url %}
+          {% assign current_url = page.url | relative_url %}
+          {% assign is_active = false %}
+          {% if item_url == current_url or current_url == '/' and item.url == '/' %}
+            {% assign is_active = true %}
+          {% elsif item.children %}
+            {% for child in item.children %}
+              {% if child.url | relative_url == current_url %}
+                {% assign is_active = true %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if item.children %}
+          <li class="nav-item dropdown {% if is_active %}active{% endif %}">
+            <a class="nav-link dropdown-toggle {% if is_active %}active{% endif %}" href="{{ item.url | relative_url }}" id="nav-{{ item.label | slugify }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ item.label | escape }}</a>
+            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="nav-{{ item.label | slugify }}">
+              {% for child in item.children %}<li><a class="dropdown-item" href="{{ child.url | relative_url }}">{{ child.label | escape }}</a></li>{% endfor %}
+            </ul>
+          </li>
+          {% elsif item.cta %}
+          <li class="nav-item ms-lg-3"><a class="nav-link custom-btn custom-border-btn btn {% if is_active %}active{% endif %}" href="{{ item.url | relative_url }}">{{ item.label | escape }}</a></li>
+          {% else %}
+          <li class="nav-item {% if is_active %}active{% endif %}"><a class="nav-link {% if is_active %}active{% endif %}" href="{{ item.url | relative_url }}">{{ item.label | escape }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>

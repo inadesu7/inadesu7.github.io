@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<section class="news-detail-header-section text-center page-header">
+  <div class="section-overlay" aria-hidden="true"></div>
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-12">
+        <p class="text-white mb-2"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+        <h1 class="text-white">{{ page.title | escape }}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="news-section section-padding">
+  <div class="container">
+    <div class="row">
+      <article class="col-lg-8 col-12">
+        <div class="news-block">
+          {% if page.image %}
+          <div class="news-block-top">
+            <img src="{{ page.image | relative_url }}" class="news-image img-fluid" alt="{{ page.image_alt | default: page.title | escape }}">
+          </div>
+          {% endif %}
+          <div class="news-block-info">
+            <div class="news-block-date mb-3"><p><i class="bi-calendar4 custom-icon me-1" aria-hidden="true"></i><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p></div>
+            <div class="news-block-body article-content">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+      </article>
+      <aside class="col-lg-4 col-12 mt-5 mt-lg-0" aria-label="Recent news">
+        <h2 class="h4 mb-4">Recent news</h2>
+        {% for recent in site.posts limit: 4 %}
+          {% unless recent.url == page.url %}
+          <div class="news-block news-block-two-col d-flex mt-4">
+            <div class="news-block-two-col-image-wrap">
+              <a href="{{ recent.url | relative_url }}"><img src="{{ recent.image | relative_url }}" class="news-image img-fluid" alt="{{ recent.image_alt | default: recent.title | escape }}"></a>
+            </div>
+            <div class="news-block-two-col-info">
+              <div class="news-block-title mb-2"><h3 class="h6"><a href="{{ recent.url | relative_url }}" class="news-block-title-link">{{ recent.title | escape }}</a></h3></div>
+              <div class="news-block-date"><p>{{ recent.date | date: "%B %-d, %Y" }}</p></div>
+            </div>
+          </div>
+          {% endunless %}
+        {% endfor %}
+        <a href="{{ '/news/' | relative_url }}" class="custom-btn btn mt-4">All news</a>
+      </aside>
+    </div>
+  </div>
+</section>

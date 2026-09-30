@@ -1,0 +1,28 @@
+# Jekyll build artifacts
+_site/
+.jekyll-metadata
+.jekyll-cache/
+
+# Ruby and Bundler
+Gemfile.lock
+vendor/
+.bundle/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Build artifacts
+.sass-cache/
+*.gem

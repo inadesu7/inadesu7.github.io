@@ -1,0 +1,36 @@
+title: Inclusive Action for Development and Sustainability (INADESU)
+email: info@inadesu.com
+description: >-
+  INADESU is a non-profit association in Buea, Cameroon, working to improve
+  the lives of women, children, persons with disabilities, and underprivileged
+  communities.
+url: https://inadesu.com
+baseurl: ""
+markdown: kramdown
+permalink: /news/:year/:month/:day/:title/
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - MIGRATION_NOTES.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - vendor
+  - .bundle
+  - .git
+  - .github

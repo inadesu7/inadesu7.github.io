@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-12 mb-4">
+        <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/brand/inadesu-logo.png' | relative_url }}" class="logo img-fluid" alt="INADESU home"></a>
+      </div>
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <h2 class="site-footer-title mb-3">Explore INADESU</h2>
+        <ul class="footer-menu">
+          {% for item in site.data.navigation %}
+          <li class="footer-menu-item"><a href="{{ item.url | relative_url }}" class="footer-menu-link">{{ item.label | escape }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 col-12 mx-auto">
+        <h2 class="site-footer-title mb-3">Contact</h2>
+        <p class="text-white d-flex mb-2"><i class="bi-telephone me-2" aria-hidden="true"></i><a href="tel:{{ site.data.organisation.telephone | replace: ' ', '' }}" class="site-footer-link">{{ site.data.organisation.telephone }}</a></p>
+        <p class="text-white d-flex"><i class="bi-envelope me-2" aria-hidden="true"></i><a href="mailto:{{ site.data.organisation.email }}" class="site-footer-link">{{ site.data.organisation.email }}</a></p>
+        <p class="text-white d-flex mt-3"><i class="bi-geo-alt me-2" aria-hidden="true"></i>{{ site.data.organisation.address | escape }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-7 col-12"><p class="copyright-text mb-0">Copyright &copy; {{ site.time | date: "%Y" }} {{ site.data.organisation.abbreviation }}. All rights reserved.</p></div>
+        <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center justify-content-md-end align-items-center mt-3 mt-md-0">{% include social-links.html %}</div>
+      </div>
+    </div>
+  </div>
+</footer>

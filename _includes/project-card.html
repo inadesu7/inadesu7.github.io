@@ -1,0 +1,13 @@
+<article class="custom-block-wrap h-100" id="{{ include.project.title | slugify }}">
+  <img src="{{ include.project.image | relative_url }}" class="custom-block-image img-fluid" alt="{{ include.project.alt | default: include.project.title | escape }}" loading="lazy">
+  <div class="custom-block">
+    <div class="custom-block-body">
+      <p class="text-uppercase small mb-2">{{ include.project.category | escape }}{% if include.project.year %} &middot; {{ include.project.year }}{% endif %}</p>
+      <h3 class="h5 mb-3">{{ include.project.title | escape }}</h3>
+      <p>{{ include.project.description | escape }}</p>
+      {% if include.project.lead %}<p class="mb-1"><strong>Project lead:</strong> {{ include.project.lead | escape }}</p>{% endif %}
+      {% if include.project.members %}<p class="mb-0"><strong>Project members:</strong> {{ include.project.members | escape }}</p>{% endif %}
+    </div>
+    {% if include.cta %}<a href="{{ include.cta | relative_url }}" class="custom-btn btn">{{ include.cta_label | default: "Learn more" | escape }}</a>{% endif %}
+  </div>
+</article>
