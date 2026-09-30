@@ -158,6 +158,42 @@ Then add to navigation in `_data/navigation.yml`.
 
 ---
 
+## Updating the Website
+
+After making changes locally, open PowerShell or WSL and navigate to the website folder:
+
+```bash
+cd /mnt/c/Users/engs2868/Downloads/inadesu-jekyll
+```
+
+Stage the changes:
+
+```bash
+git add .
+```
+
+Commit them with a short description of what was changed:
+
+```bash
+git commit -m "Update website content"
+```
+
+Push the changes to GitHub:
+
+```bash
+git push
+```
+
+GitHub Pages will automatically rebuild and publish the updated website after the push succeeds.
+
+To check which files have changed before committing, use:
+
+```bash
+git status
+```
+
+---
+
 ## 📁 Project Structure
 
 ```
