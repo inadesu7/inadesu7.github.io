@@ -131,6 +131,17 @@ h6 {
   background: rgba(0, 0, 0, 0.12);
 }
 
+.news-block-top {
+  aspect-ratio: 4 / 3;
+}
+
+.news-block-top .news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 :focus-visible {
   outline: 3px solid var(--custom-btn-bg-color);
   outline-offset: 3px;

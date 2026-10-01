@@ -27,5 +27,5 @@ INADESU is always looking for talented, committed individuals who share our visi
 - **Internships** for students and recent graduates interested in development work
 - **Consulting partnerships** for specialized expertise
 
-**Interested?** [Get Involved →](/get-involved/)  
+**Interested?** [Get Involved →](/about/#how-you-can-support)  
 [Contact us →](/contact/)
