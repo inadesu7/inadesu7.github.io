@@ -19,7 +19,14 @@ permalink: /contact/
 
 ## Send a Message
 
-<form action="https://formspree.io/f/meaodllp" method="POST" class="custom-form contact-form">
+<div data-fs-success class="alert alert-success" style="display: none;">
+  <strong>Success!</strong> Your message has been received. We'll get back to you as soon as possible.
+</div>
+<div data-fs-error class="alert alert-danger" style="display: none;">
+  <strong>Error:</strong> There was a problem submitting your form. Please try again or contact us directly.
+</div>
+
+<form id="contact-form" class="custom-form contact-form">
   <div class="row mb-3">
     <div class="col-lg-6 col-12 mb-3">
       <label for="name" class="form-label">Full Name *</label>
@@ -27,7 +34,8 @@ permalink: /contact/
     </div>
     <div class="col-lg-6 col-12 mb-3">
       <label for="email" class="form-label">Email *</label>
-      <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required>
+      <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required data-fs-field>
+      <span data-fs-error="email" class="text-danger small"></span>
     </div>
   </div>
 
@@ -38,7 +46,8 @@ permalink: /contact/
 
   <div class="mb-3">
     <label for="message" class="form-label">Message *</label>
-    <textarea id="message" name="message" class="form-control" rows="6" placeholder="Your message..." required></textarea>
+    <textarea id="message" name="message" class="form-control" rows="6" placeholder="Your message..." required data-fs-field></textarea>
+    <span data-fs-error="message" class="text-danger small"></span>
   </div>
 
   <div class="mb-3">
@@ -54,7 +63,20 @@ permalink: /contact/
     </select>
   </div>
 
-  <button type="submit" class="custom-btn btn">Send Message</button>
+  <button type="submit" class="custom-btn btn" data-fs-submit-btn>Send Message</button>
 </form>
+
+<script>
+  window.formspree =
+    window.formspree ||
+    function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+  formspree("initForm", {
+    formElement: "#contact-form",
+    formId: "meaodllp",
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 
