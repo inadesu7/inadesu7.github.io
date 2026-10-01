@@ -19,10 +19,10 @@ permalink: /contact/
 
 ## Send a Message
 
-<div data-fs-success class="alert alert-success" style="display: none;">
+<div data-fs-success class="alert alert-success">
   <strong>Success!</strong> Your message has been received. We'll get back to you as soon as possible.
 </div>
-<div data-fs-error class="alert alert-danger" style="display: none;">
+<div data-fs-error class="alert alert-danger">
   <strong>Error:</strong> There was a problem submitting your form. Please try again or contact us directly.
 </div>
 
